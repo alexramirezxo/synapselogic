@@ -4,6 +4,9 @@
  */
 package synapselogic;
 
+import javax.swing.SwingUtilities;
+import synapselogic.interfaz.InterfazUsuario;
+
 /**
  *
  * @author alexramirez
@@ -15,6 +18,10 @@ public class main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        SwingUtilities.invokeLater(() -> {
+            InterfazUsuario interfaz = new InterfazUsuario();
+            interfaz.iniciar();
+        });
     }
     
 }
