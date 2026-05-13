@@ -1,0 +1,9 @@
+Diario
+
+Aquí anoto todas las tareas a cumplir de forma progresiva :)
+
+20260507
+1. Crear el proyecto de Netbeans
+2. Conectar con GitHub
+3. Crear Clases Principales
+4. Ordenar Carpetas con Documentación
