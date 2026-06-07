@@ -8,20 +8,19 @@ import javax.swing.SwingUtilities;
 import synapselogic.interfaz.InterfazUsuario;
 
 /**
- *
- * @author alexramirez
+ * Clase principal del proyecto SynapseLogic.
  */
 public class main {
 
     /**
-     * @param args the command line arguments
+     * Punto de entrada de la aplicacion.
+     *
+     * @param args argumentos de linea de comandos no utilizados
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         SwingUtilities.invokeLater(() -> {
             InterfazUsuario interfaz = new InterfazUsuario();
             interfaz.iniciar();
         });
     }
-    
 }
