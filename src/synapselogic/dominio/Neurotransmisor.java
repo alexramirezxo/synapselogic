@@ -6,7 +6,7 @@
 package synapselogic.dominio;
 
 /**
- * Representa un neurotransmisor usado por una sinapsis.
+ * Representa un neurotransmisor usado por una o varias sinapsis.
  */
 public class Neurotransmisor {
 
@@ -16,6 +16,15 @@ public class Neurotransmisor {
     private double velocidad;
     private String descripcion;
 
+    /**
+     * Crea un neurotransmisor.
+     *
+     * @param id identificador del neurotransmisor
+     * @param nombre nombre comun o cientifico
+     * @param efecto efecto principal: excitatorio, inhibitorio o modulador
+     * @param velocidad factor de velocidad para el calculo del peso de Dijkstra
+     * @param descripcion descripcion breve
+     */
     public Neurotransmisor(String id, String nombre, String efecto,
                            double velocidad, String descripcion) {
         this.id = id;
@@ -44,10 +53,9 @@ public class Neurotransmisor {
     public String getDescripcion() {
         return descripcion;
     }
+
+    @Override
+    public String toString() {
+        return id + " - " + nombre + " (v=" + velocidad + ")";
+    }
 }
-
-/**
- *
- * @author alexramirez
- */
-

@@ -6,17 +6,25 @@
 package synapselogic.dominio;
 
 /**
- * Representa una conexión dirigida entre dos neuronas.
+ * Representa una conexion dirigida entre dos neuronas.
+ * Una sinapsis contiene la distancia, el neurotransmisor asociado y el coeficiente k.
  */
-
 public class Sinapsis {
-
     private String origenId;
     private String destinoId;
     private double distancia;
     private String idNeurotransmisor;
     private double coeficienteEficiencia;
 
+    /**
+     * Crea una sinapsis dirigida.
+     *
+     * @param origenId identificador de la neurona origen
+     * @param destinoId identificador de la neurona destino
+     * @param distancia distancia sinaptica
+     * @param idNeurotransmisor ID del neurotransmisor asociado
+     * @param coeficienteEficiencia coeficiente de eficiencia sinaptica k
+     */
     public Sinapsis(String origenId, String destinoId, double distancia,
                     String idNeurotransmisor, double coeficienteEficiencia) {
         this.origenId = origenId;
@@ -27,8 +35,7 @@ public class Sinapsis {
     }
 
     public String getOrigenId() {
-        return origenId;
-    }
+        return origenId;}
 
     public String getDestinoId() {
         return destinoId;
@@ -49,9 +56,10 @@ public class Sinapsis {
     public void setCoeficienteEficiencia(double k) {
         this.coeficienteEficiencia = k;
     }
-}
-/**
- *
- * @author alexramirez
- */
 
+    @Override
+    public String toString() {
+        return origenId + " -> " + destinoId + " (d=" + distancia
+                + ", nt=" + idNeurotransmisor + ", k=" + coeficienteEficiencia + ")";
+    }
+}
