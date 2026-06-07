@@ -178,7 +178,6 @@ public class InterfazUsuario extends JFrame {
         JButton btnEliminarSinapsis = new JButton("Eliminar Sinapsis");
         JButton btnAgregarNeurotransmisor = new JButton("Agregar Neurotransmisor");
         JButton btnFatiga = new JButton("Aplicar Fatiga");
-        JButton btnVerResumen = new JButton("Actualizar Resumen");
 
         configurarBotonPanel(btnCargarRed);
         configurarBotonPanel(btnCargarDiccionario);
@@ -188,7 +187,6 @@ public class InterfazUsuario extends JFrame {
         configurarBotonPanel(btnEliminarSinapsis);
         configurarBotonPanel(btnAgregarNeurotransmisor);
         configurarBotonPanel(btnFatiga);
-        configurarBotonPanel(btnVerResumen);
 
         lblRedCargada = new JLabel("Red: no cargada");
         lblDiccionarioCargado = new JLabel("Diccionario: no cargado");
@@ -205,7 +203,6 @@ public class InterfazUsuario extends JFrame {
         btnEliminarSinapsis.addActionListener(e -> eliminarSinapsis());
         btnAgregarNeurotransmisor.addActionListener(e -> agregarNeurotransmisor());
         btnFatiga.addActionListener(e -> aplicarFatiga());
-        btnVerResumen.addActionListener(e -> actualizarResumenRed());
 
         panel.add(btnCargarRed);
         panel.add(Box.createVerticalStrut(5));
@@ -238,7 +235,6 @@ public class InterfazUsuario extends JFrame {
         panel.add(Box.createVerticalStrut(20));
         panel.add(btnFatiga);
         panel.add(Box.createVerticalStrut(5));
-        panel.add(btnVerResumen);
 
         panel.add(Box.createVerticalGlue());
 
@@ -283,17 +279,14 @@ public class InterfazUsuario extends JFrame {
         txtFuente = new JTextField(8);
         JButton btnBFS = new JButton("BFS");
         JButton btnDFS = new JButton("DFS");
-        JButton btnVerGrafo = new JButton("Ver aisladas");
 
         btnBFS.addActionListener(e -> ejecutarBFS());
         btnDFS.addActionListener(e -> ejecutarDFS());
-        btnVerGrafo.addActionListener(e -> verZonasAisladasEnGrafo());
 
-        controles.add(new JLabel("Fuente:"));
+        controles.add(new JLabel("Neurona Fuente:"));
         controles.add(txtFuente);
         controles.add(btnBFS);
         controles.add(btnDFS);
-        controles.add(btnVerGrafo);
 
         txtResultadoAnalisis = new JTextArea(7, 35);
         txtResultadoAnalisis.setEditable(false);
@@ -315,17 +308,14 @@ public class InterfazUsuario extends JFrame {
         txtOrigen = new JTextField(8);
         txtDestino = new JTextField(8);
         JButton btnDijkstra = new JButton("Dijkstra");
-        JButton btnVerGrafo = new JButton("Ver ruta");
 
         btnDijkstra.addActionListener(e -> ejecutarDijkstra());
-        btnVerGrafo.addActionListener(e -> verRutaEnGrafo());
 
         controles.add(new JLabel("Origen:"));
         controles.add(txtOrigen);
         controles.add(new JLabel("Destino:"));
         controles.add(txtDestino);
         controles.add(btnDijkstra);
-        controles.add(btnVerGrafo);
 
         txtResultadoRuta = new JTextArea(7, 35);
         txtResultadoRuta.setEditable(false);
@@ -459,7 +449,6 @@ public class InterfazUsuario extends JFrame {
     private void mostrarResultadoAisladas(String algoritmo, String fuente, List<Neurona> aisladas) {
         ultimasZonasAisladas.clear();
         ultimaRutaCalculada.clear();
-
         txtResultadoAnalisis.setText("Resultado " + algoritmo + "\n");
         txtResultadoAnalisis.append("Fuente: " + fuente + "\n");
         txtResultadoAnalisis.append("Zonas aisladas: " + aisladas.size() + "\n");
